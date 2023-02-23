@@ -5,12 +5,32 @@
   <title>Error link 404</title>
 </head>
 <body>
-<h1>Error you typed a bad link!</h1>
+<h1>Error 404: BAD LINK</h1>
+<h2>you seem to have typed a bad link!</h2>
+<h2 id="404title"></h2>
+<h3>Please use the below text box to correct your mistake</h3>
+<h5>Do not include "erick.link/" just what is after the forward slash</h5>
 
-
+<form id="frm1">
+  <label for="lname">Correct link ending:</label><br>
+<!--  <input type="text" id="lname" name="lname" value=""><br>-->
+  <textarea id="lname">PLEASE ENABLE JAVASCRIPT</textarea>
+  <br>
+  <input type="button" onclick="tryAgain()" value="Try again">
+</form>
+<h6>It is also possible that the link you are using has been deleted</h6>
+<footer>
+  <h6 style="bottom: 0%; position: fixed">Created by Erick Grant 2023</h6>
+</footer>
 <script>
   var ogLink = getQueryVariable("link");
   console.log(ogLink);
+
+
+  document.getElementById("404title").innerHTML = "You typed: https://erick.link/" + ogLink;
+//Set text box to the link
+  document.getElementById("lname").innerHTML = ogLink;
+
   function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
@@ -20,8 +40,18 @@
         return pair[1];
       }
     }
-    alert('Query Variable ' + variable + ' not found');
+    alert("How did you get here? please make sure you use erick.link/");
   }
+
+  function tryAgain() {
+    var x = document.getElementById("frm1");
+    var userIn = x.elements[0].value;
+    console.log("user typed: " + userIn);
+    var newLink = "https://erick.link/" + userIn;
+    console.log("new link: " + newLink);
+    window.location = newLink;
+  }
+
 </script>
 </body>
 </html>
