@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error link 404</title>
+</head>
+<body>
+<h1>Error you typed a bad link!</h1>
+
+
+<script>
+
+  const URL = new URL(window.location.href);
+  const getParam = URL.searchParams.get('link');
+  console.log(getParam);
+
+
+
+</script>
+</body>
+</html>
