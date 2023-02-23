@@ -9,8 +9,8 @@
 
 
 <script>
-  var param1var = getQueryVariable("link");
-
+  var ogLink = getQueryVariable("link");
+  console.log(ogLink);
   function getQueryVariable(variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
