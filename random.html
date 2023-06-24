@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loading</title>
+<script>
+
+function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+var selection = 0;
+function statsget() {
+   var uname = 'CertainPerformance';
+   fetch(`https://erick-rando-default-rtdb.firebaseio.com/links.json`)
+     .then(res => res.json())
+     .then(resJSON => {
+       // interact with resJSON here
+       console.log(resJSON);
+	console.log(resJSON.length);
+	//selection = Math.floor(Math.random() * (resJSON.length));
+        var link = resJSON.at(randomNumber(1, resJSON.length));
+	console.log("Going to: " + link);
+	window.location.replace(link);
+
+     });
+ }
+ statsget();
+
+
+
+
+
+
+</script>
+</head>
+
+<body>
+<h3>Loading, please wait, ensure you have javascript enabled</h3>
+<h5>Copyright Erick Grant 2023</h5>
+
+
+</body>
+
+</html>
