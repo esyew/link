@@ -14,6 +14,10 @@
   position: fixed !important;
   opacity: 0.23;
 }
+#planet {
+ /* max-height: 15%; */
+}
+
 
 .permission_denied {
   background: #24344c !important;
