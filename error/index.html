@@ -120,7 +120,7 @@
     <!-- <input type="button" onclick="tryAgain()" value="Try again"> -->
   </form>
 
-    <a href="#"><button class="denied__link" onclick="tryAgain()">Try Again</button></a>
+    <a href="#"><button class="denied__link" type="submit" onclick="tryAgain()">Try Again</button></a>
 
     <h3>Please use the above text box to try again.</h3>
     <h4>Do not include "erick.link/" <br>Enter only what is after the "/"</h4>
@@ -163,6 +163,22 @@
     console.log("new link: " + newLink);
     window.location = newLink;
   }
+
+  // function checkSubmit(e) {
+  //  if(e && e.keyCode == 13) {
+  //     // document.forms[0].submit();
+  //     tryAgain();
+  //  }
+
+   document.onkeypress = function(evt) {
+    evt = evt || window.event;
+    var charCode = evt.which || evt.keyCode;
+    if (charCode == 13) {
+        // Insert Enter handling code here
+        // alert("Enter pressed");
+        tryAgain();
+    }
+};
 
 </script>
 </body>
